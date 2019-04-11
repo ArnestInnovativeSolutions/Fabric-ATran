@@ -1,0 +1,6 @@
+{
+    "index": { "fields": [ "docType", "id" ] },
+    "ddoc": "indexGeneric",
+    "name": "indexGeneric",
+    "type": "json"
+}

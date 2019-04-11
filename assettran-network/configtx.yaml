@@ -1,0 +1,43 @@
+Organizations:
+    - &OrdererOrg
+        Name: OrdererOrg
+        ID: OrdererMSP
+        MSPDir: crypto-config/ordererOrganizations/arnest.in/msp
+    - &atran
+        Name: atranMSP
+        ID: atranMSP
+        MSPDir: crypto-config/peerOrganizations/atran.arnest.in/msp
+        AnchorPeers:
+            - Host: peer0.atran.arnest.in
+              Port: 7051
+Application: &ApplicationDefaults
+    Organizations:
+Orderer: &OrdererDefaults
+    OrdererType: solo
+    Addresses:
+        - orderer.arnest.in:7050
+    BatchTimeout: 2s
+    BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 99 MB
+        PreferredMaxBytes: 512 KB
+    Kafka:
+        Brokers:
+            - 127.0.0.1:9092
+    Organizations:
+Profiles:
+    ATranOrgOrdererGenesis:
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - *OrdererOrg
+        Consortiums:
+            ATranConsortium:
+                Organizations:
+                    - *atran
+    ATranOrgChannel:
+        Consortium: ATranConsortium
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                    - *atran

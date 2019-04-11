@@ -1,0 +1,33 @@
+---
+name: atran
+version: 1.0.0
+client:
+    organization: atran
+    connection:
+        timeout:
+            peer:
+                endorser: '300'
+            orderer: '300'
+channels:
+    atranchannel:
+        orderers:
+        - orderer.arnest.in
+        peers:
+            peer0.atran.arnest.in: {}
+organizations:
+    atran:
+        mspid: atranMSP
+        peers:
+        - peer0.atran.arnest.in
+        certificateAuthorities:
+        - ca.arnest.in
+orderers:
+    orderer.arnest.in:
+        url: grpc://localhost:7050
+peers:
+    peer0.atran.arnest.in:
+        url: grpc://localhost:7051
+certificateAuthorities:
+    ca.arnest.in:
+        url: http://localhost:7054
+        caName: ca.arnest.in

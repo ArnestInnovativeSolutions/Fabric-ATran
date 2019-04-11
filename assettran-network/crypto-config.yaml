@@ -1,0 +1,17 @@
+OrdererOrgs:
+  - Name: Orderer
+    Domain: arnest.in
+    Specs:
+      - Hostname: orderer
+PeerOrgs:
+  # org1
+  - Name: atran
+    Domain: atran.arnest.in
+    CA:
+      Country: INDIA
+      Province: Karnataka
+      Locality: Bengaluru
+    Template:
+      Count: 1
+    Users:
+      Count: 1

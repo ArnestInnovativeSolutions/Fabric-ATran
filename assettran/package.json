@@ -1,0 +1,37 @@
+{
+  "name": "atran",
+  "version": "1.0.0",
+  "description": "Asset Transfer Blockchain Application",
+  "main": "atran.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon atran.js"
+  },
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "coinkey": "^3.0.0",
+    "crypto": "^1.0.1",
+    "eccrypto": "^1.0.3",
+    "ecdsa": "^0.7.0",
+    "fabric-ca-client": "~1.4.0",
+    "fabric-client": "~1.4.0",
+    "grpc": "^1.6.0",
+    "jsonwebtoken": "^8.3.0",
+    "jsrsasign": "^8.0.12",
+    "memory-cache": "^0.2.0",
+    "secure-random": "^1.1.1",
+    "uuid": "^3.3.0"
+  },
+  "author": "arnest.in",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Hyperledger",
+    "Fabric",
+    "Asset",
+    "Transfer",
+    "Application"
+  ],
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
